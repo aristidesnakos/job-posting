@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 96%;
+    --foreground: 220 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+    --primary: 220 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 20% 90%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 200 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 350 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 20% 85%;
+    --input: 220 20% 85%;
+    --ring: 220 80% 50%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 220 40% 10%;
+    --foreground: 220 20% 95%;
+    --card: 220 35% 15%;
+    --card-foreground: 220 20% 95%;
+    --popover: 220 35% 15%;
+    --popover-foreground: 220 20% 95%;
+    --primary: 220 80% 60%;
+    --primary-foreground: 220 40% 10%;
+    --secondary: 280 60% 60%;
+    --secondary-foreground: 220 40% 10%;
+    --muted: 220 30% 20%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 200 100% 60%;
+    --accent-foreground: 220 40% 10%;
+    --destructive: 350 70% 45%;
+    --destructive-foreground: 220 20% 95%;
+    --border: 220 30% 25%;
+    --input: 220 30% 25%;
+    --ring: 220 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, hsl(220 40% 98%) 0%, hsl(200 50% 95%) 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/95 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  
+  .metric-gradient {
+    background: linear-gradient(135deg, hsl(220 80% 50%) 0%, hsl(280 60% 50%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .chart-gradient {
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0) 100%);
+  }
+  
+  .risk-high {
+    @apply text-red-500;
+  }
+  
+  .risk-medium {
+    @apply text-yellow-500;
+  }
+  
+  .risk-low {
+    @apply text-green-500;
+  }
+}
